@@ -1,3 +1,8 @@
+---
+import Menu from "../components/menu.astro";
+import Footer from "../components/footer.astro";
+---
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -9,65 +14,11 @@
     <title>Impact Festival generel layout</title>
   </head>
   <body>
-    <header>
-      <a href="/">
-        <img src="/logoimpact.svg" alt="Impact logo" class="logo" />
-      </a>
-
-      <nav>
-        <ul class="nav-links">
-          <li><a href="/about">ABOUT</a></li>
-          <li><a href="/program">PROGRAM</a></li>
-          <li><a href="/tickets">TICKETS</a></li>
-          <li><a href="/newsletter">NEWSLETTER</a></li>
-        </ul>
-
-        <ul class="social-links">
-          <li>
-            <a href="https://www.instagram.com/impactfestival_cph/" target="_blank" rel="noopener noreferre">
-              <img src="/instagram.svg" alt="Instagram" />
-            </a>
-          </li>
-
-          <li>
-            <a href="https://dk.linkedin.com/company/trifolium-kbh" target="_blank" rel="noopener noreferre">
-              <img src="/linkedin.svg" alt="LinkedIn" />
-            </a>
-          </li>
-
-          <li>
-            <a href="https://www.facebook.com/TrifoliumCPH/" target="_blank" rel="noopener noreferre">
-              <img src="/facebook.svg" alt="Facebook" />
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-
     <main>
+      <Menu />
       <slot />
     </main>
-
-    <footer>
-      <a href="https://www.billetsalg.dk/Ticket/IMPACT%20FESTIVAL%202026/9545">
-        <img src="/logoimpact.svg" alt="Impact logo" class="footer-logo" />
-      </a>
-
-      <div class="footer-location">
-        <h1>Location</h1>
-        <p>Bådehavnsgade 42</p>
-        <p>2450, København SV</p>
-      </div>
-
-      <div class="footer-contact">
-        <h1>Contact</h1>
-        <p>impact@trio.dk</p>
-      </div>
-
-      <div class="footer-p">
-        <p>IMPACT FESTIVAL is organized by Forening Impact, Sydhavnen, CVR no. 46334272, Bådehavnsgade 42, 2450 Copenhagen SV. Tickets are sold through <a href="https://billetsalg.dk" target="_blank" rel="noopener noreferrer">billetsalg.dk</a></p>
-      </div>
-    </footer>
+    <Footer />
   </body>
 </html>
 
@@ -87,112 +38,5 @@
 
   main {
     flex: 1;
-  }
-
-  header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    padding: 1rem 4rem;
-    background-color: white;
-    border: 4px solid black;
-    width: 100%;
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .logo {
-    width: 180px;
-    height: auto;
-    display: block;
-  }
-
-  nav {
-    display: flex;
-    align-items: center;
-    gap: 3rem;
-  }
-
-  .nav-links {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
-    margin: 0;
-    padding: 0;
-  }
-
-  .nav-links a {
-    text-decoration: none;
-    color: black;
-    letter-spacing: 0.02em;
-  }
-
-  .nav-links a.active {
-    text-decoration: underline;
-    cursor: pointer;
-  }
-
-  .social-links {
-    display: flex;
-    list-style: none;
-    gap: 1rem;
-    margin: 0;
-    padding: 0;
-  }
-
-  .social-links img {
-    width: 40px;
-    height: 40px;
-    display: block;
-  }
-
-  .social-links a {
-    color: black;
-    display: flex;
-  }
-
-  footer {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    padding: 2rem 3rem;
-    column-gap: 4rem;
-    grid-template-areas:
-      "logo location contact"
-      "logo legal legal";
-    gap: 1.5rem 4rem;
-    align-items: start;
-  }
-
-  .footer-logo {
-    grid-area: logo;
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-  }
-
-  .footer-location {
-    grid-area: location;
-  }
-
-  .footer-contact {
-    grid-area: contact;
-  }
-
-  .footer-p {
-    grid-area: legal;
-    font-size: 0.9rem;
-    margin: 0;
-  }
-
-  .footer-location h3,
-  .footer-contact h3 {
-    margin: 0 0 0.5rem 0;
-  }
-
-  .footer-location p,
-  .footer-contact p {
-    margin: 0;
   }
 </style>
