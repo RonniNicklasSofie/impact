@@ -1,21 +1,37 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Button from "../components/button.astro";
 ---
 
 <Layout>
-  <div class="forsidetekst">
-    <img src="/forsidetekst.svg" alt="forsidetekst" />
+  <div class="forsidelogo">
+    <img src="/forsidelogo.svg" alt="forsidelogo" />
   </div>
 
   <div class="forside-p">
     <p>MUSIC // ART // TALKS // WORKSHOPS // FOOD</p>
     <p>DESIGNED TO INCREASE OUR IMPACT</p>
   </div>
+
+  <Button />
 </Layout>
 
 <style>
+  .forsidelogo img {
+    padding: 3rem 10rem;
+    margin-top: -50px;
+    display: block;
+  }
+
+  .forsidelogo {
+    overflow: hidden;
+    height: 550px;
+  }
+
   .forside-p {
     text-align: center;
     color: #dc0c15;
+    font-weight: bold;
+    font-size: x-large;
   }
 </style>
